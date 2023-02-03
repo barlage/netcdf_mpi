@@ -1,0 +1,6 @@
+
+ COMPILERF90    =	mpif90
+ FREESOURCE     =       -ffree-form  -ffree-line-length-none
+ F90FLAGS       =       #-g 
+ MODFLAG        =	-I ../mpi
+ RM             =       rm -f

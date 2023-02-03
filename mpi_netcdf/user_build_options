@@ -1,0 +1,7 @@
+
+ COMPILERF90    =	mpif90
+ FREESOURCE     =       -ffree-form  -ffree-line-length-none #-fallow-argument-mismatch 
+ F90FLAGS       =       #-g 
+ MODFLAG        =	-I../mpi -I/opt/local/include
+ LIBFLAG        =       -L/opt/local/lib -lnetcdff
+ RM             =       rm -f
