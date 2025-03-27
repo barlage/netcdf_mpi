@@ -22,6 +22,7 @@ jobs:
       - run: which mpif90
       - run: ls
       - run: 
+
   mpi-check:
     runs-on: ubuntu-latest
     steps:
