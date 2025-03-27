@@ -25,6 +25,8 @@ jobs:
   mpi-check:
     runs-on: ubuntu-latest
     steps:
+      - run: pwd
+      - run: ls
       - run: cd mpi_no_netcdf
       - run: make
       - run: ls
