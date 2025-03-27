@@ -21,3 +21,12 @@ jobs:
       - run: dpkg -L openmpi-bin
       - run: which mpif90
       - run: ls
+      - run: 
+  mpi-check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cd mpi_no_netcdf
+      - run: make
+      - run: ls
+      - run: ls run
+    
