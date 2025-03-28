@@ -17,7 +17,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
       - run: sudo apt-get install openmpi-bin libopenmpi-dev libnetcdff-dev netcdf-bin
-      - run: dpkg -L libnetcdff-dev
+      - run: which ncdump
       - name: Run the mpi_no_netcdf code
         run: |
           cd mpi_no_netcdf
@@ -28,4 +28,6 @@ jobs:
           pwd
           cd netcdf
           make
+          ./test_netcdf.exe
+          ncdump blah.nc
     
