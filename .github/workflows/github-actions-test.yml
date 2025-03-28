@@ -16,8 +16,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
-      - run: sudo apt-get install openmpi-bin libopenmpi-dev libnetcdf-pnetcdf-dev
-      - run: dpkg -L libnetcdf-pnetcdf-dev
+      - run: sudo apt-get install openmpi-bin libopenmpi-dev libnetcdff-dev
+      - run: dpkg -L libnetcdff-dev
       - run: ls /usr/lib
       - name: Run the mpi_no_netcdf code
         run: |
