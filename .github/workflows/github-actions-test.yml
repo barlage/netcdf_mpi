@@ -34,5 +34,5 @@ jobs:
           cd mpi_netcdf
           make
           mpiexec -np 2 ./run/ufsLand.exe
-          ncdump test.nc
+          ncdump ./run/test.nc
     
