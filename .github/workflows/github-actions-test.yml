@@ -19,9 +19,11 @@ jobs:
       - run: sudo apt-get install openmpi-bin libopenmpi-dev libnetcdf-mpi-dev netcdf-bin
       - run: dpkg -L libnetcdf-mpi-dev
   compile-run-each:
+    needs: set-environment
     runs-on: ubuntu-latest
     steps:
       - run: pwd
+      - run: ls
       - name: Run the mpi_no_netcdf code
         run: |
           cd mpi_no_netcdf
