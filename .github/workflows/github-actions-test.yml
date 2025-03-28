@@ -21,6 +21,7 @@ jobs:
   compile-run-each:
     runs-on: ubuntu-latest
     steps:
+      - run: pwd
       - name: Run the mpi_no_netcdf code
         run: |
           cd mpi_no_netcdf
