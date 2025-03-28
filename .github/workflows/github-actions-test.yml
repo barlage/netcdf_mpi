@@ -5,7 +5,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions
 on: [push]
 
 jobs:
-  compile-run-each:
+  set-environment:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -18,7 +18,9 @@ jobs:
       - run: echo "This job's status is ${{ job.status }}."
       - run: sudo apt-get install openmpi-bin libopenmpi-dev libnetcdf-mpi-dev netcdf-bin
       - run: dpkg -L libnetcdf-mpi-dev
-      - run: dpkg -L libnetcdff7
+  compile-run-each:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run the mpi_no_netcdf code
         run: |
           cd mpi_no_netcdf
