@@ -22,7 +22,7 @@ jobs:
         run: |
           cd mpi_no_netcdf
           make
-          mpiexec -np 4 ./run/ufsLand.exe
+          mpiexec -np 2 ./run/ufsLand.exe
       - name: Run the netcdf code
         run: |
           pwd
