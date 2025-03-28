@@ -29,10 +29,10 @@ jobs:
           make
           ./test_netcdf.exe
           ncdump blah.nc
-      - name: Run the mpi netcdf code
+      - name: Run the mpi_netcdf code
         run: |
           cd mpi_netcdf
           make
-          mpiexec -np 2 ./run/test_netcdf.exe
+          mpiexec -np 2 ./run/ufsLand.exe
           ncdump test.nc
     
