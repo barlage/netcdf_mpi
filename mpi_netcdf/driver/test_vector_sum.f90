@@ -73,7 +73,7 @@ subroutine handle_err(status, message)
  
   if(status /= nf90_noerr) then
     print *, trim(nf90_strerror(status))
-    if(present(message) print *, trim(message)
+    if(present(message)) print *, trim(message)
     stop "Stopped"
   end if
 end subroutine handle_err
