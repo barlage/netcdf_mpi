@@ -16,10 +16,16 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
-      - run: sudo apt-get install openmpi-bin libopenmpi-dev
+      - run: sudo apt-get install openmpi-bin libopenmpi-dev libnetcdf-pnetcdf-dev
+      - run: ls /usr/lib
       - name: Run the mpi_no_netcdf code
         run: |
           cd mpi_no_netcdf
           make
-          mpiexec -np 2 ./run/ufsLand.exe
+          mpiexec -np 4 ./run/ufsLand.exe
+      - name: Run the netcdf code
+        run: |
+          pwd
+          cd netcdf
+          make
     
