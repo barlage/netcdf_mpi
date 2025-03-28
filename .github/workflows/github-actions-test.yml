@@ -23,6 +23,7 @@ jobs:
       - run: pwd
       - run: ls
       - run: cd mpi_no_netcdf
+      - run: ls
       - run: make
       - run: ls
       - run: ls run
