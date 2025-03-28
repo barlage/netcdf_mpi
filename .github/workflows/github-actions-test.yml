@@ -5,7 +5,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions
 on: [push]
 
 jobs:
-  mpi-check:
+  compile-run-each:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -19,10 +19,13 @@ jobs:
       - run: echo $SHELL
       - run: sudo apt-get install openmpi-bin
       - run: dpkg -L openmpi-bin
+      - run: dpkg -L libopenmpi3t64
       - run: which mpif90
       - run: pwd
-      - run: ls
-      - run: |
+      - run: env
+      - name: Run the mpi_no_netcdf code
+        run: |
+          env
           cd mpi_no_netcdf
           ls
           make
