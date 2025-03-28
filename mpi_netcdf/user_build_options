@@ -2,7 +2,7 @@
  COMPILERF90    = mpif90
  FREESOURCE     = -ffree-form  -ffree-line-length-none #-fallow-argument-mismatch 
  F90FLAGS       = #-g 
- NETCDF         = /Users/michael.barlage/packages/spack-stack/envs/ufs-plus/install/apple-clang/15.0.0/netcdf-fortran-4.6.1-b3cbdfb
- MODFLAG        = -I../mpi -I$(NETCDF)/include
- LIBFLAG        = -L$(NETCDF)/lib -lnetcdff
+ NETCDF         = 
+ MODFLAG        = -I../mpi -I/usr/include
+ LIBFLAG        = -lnetcdff
  RM             = rm -f
