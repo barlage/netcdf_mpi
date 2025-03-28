@@ -31,7 +31,7 @@ program test_vector_sum
   
   status = nf90_create('test.nc', NF90_NETCDF4 ,ncid, comm = MPI_COMM_WORLD, &
        info = MPI_INFO_NULL)
-    if (status /= nf90_noerr) call handle_err(status,"nf90_create")
+    if (status /= nf90_noerr) call handle_err(status, message = "nf90_create")
   status = nf90_def_dim(ncid, "time", NF90_UNLIMITED, timid)
     if (status /= nf90_noerr) call handle_err(status,"nf90_def_dim time")
   status = nf90_def_dim(ncid, "lat" , fullx         , latid)
@@ -66,15 +66,15 @@ program test_vector_sum
   
 end program
 
-  subroutine handle_err(status, message)
-    use netcdf
-    integer, intent ( in) :: status
-    character(len=*), intent ( in), optional :: message
+subroutine handle_err(status, message)
+  use netcdf
+  integer, intent ( in) :: status
+  character(len=*), intent ( in), optional :: message
  
-    if(status /= nf90_noerr) then
-      print *, trim(nf90_strerror(status))
-      print *, trim(message)
-      stop "Stopped"
-    end if
-  end subroutine handle_err
+  if(status /= nf90_noerr) then
+    print *, trim(nf90_strerror(status))
+    print *, trim(message)
+    stop "Stopped"
+  end if
+end subroutine handle_err
 
