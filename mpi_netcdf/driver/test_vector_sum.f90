@@ -69,7 +69,7 @@ end program
 subroutine handle_err(status, message)
   use netcdf
   integer, intent ( in) :: status
-  character(len=*), intent ( in), optional :: message
+  character(len=*), intent ( in) :: message
  
   if(status /= nf90_noerr) then
     print *, trim(nf90_strerror(status))
