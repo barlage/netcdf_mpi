@@ -20,7 +20,7 @@ jobs:
       - run: sudo apt-get install openmpi-bin
       - run: dpkg -L openmpi-bin
       - run: dpkg -L libopenmpi3t64
-      - run: ls /usr/include
+      - run: ls /usr/lib/x86_64-linux-gnu/openmpi
       - run: pwd
       - run: env
       - name: Run the mpi_no_netcdf code
