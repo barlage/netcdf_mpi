@@ -4,5 +4,5 @@
  F90FLAGS       = #-g 
  NETCDF         = 
  MODFLAG        = -I../mpi -I/usr/include
- LIBFLAG        = -lnetcdff
+ LIBFLAG        = -lnetcdf_mpi
  RM             = rm -f
