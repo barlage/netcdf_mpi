@@ -1,0 +1,17 @@
+name: GitHub Actions: mpi_no_netcdf
+
+on: [push]
+
+jobs:
+
+  build-run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install openmpi-bin libopenmpi-dev
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Run the mpi_no_netcdf code
+        run: |
+          cd mpi_no_netcdf
+          make
+          mpiexec -np 2 ./run/ufsLand.exe
