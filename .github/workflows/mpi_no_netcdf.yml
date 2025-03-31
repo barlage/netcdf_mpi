@@ -1,4 +1,4 @@
-name: GitHub Actions mpi_no_netcdf
+run-name: GitHub Actions mpi_no_netcdf
 
 on: [push]
 
