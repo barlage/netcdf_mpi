@@ -1,4 +1,4 @@
-name: GitHub Actions: mpi_netcdf
+name: GitHub Actions mpi_netcdf
 
 on: [push]
 
